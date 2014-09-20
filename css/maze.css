@@ -1,0 +1,73 @@
+#mazeParent {
+	position: relative;
+	/*width: 313px;*/
+	margin: 0px 0px;
+	padding: 0;
+	/*overflow: hidden;*/
+	/*background: #ccc;*/
+}
+.maze-row {
+	position: relative;
+    display: block;
+    margin: -13px 0 0 0;
+    padding: 0px 0px;
+    /*overflow: hidden;*/
+    pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	/*border: 1px solid #ccc;*/
+}
+.circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 12px;
+    border: 1px solid #999;
+    border-radius: 30px;
+    box-sizing: border-box;
+    vertical-align: top;
+
+    pointer-events: all;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.circle span{
+    display: block;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0;
+}
+
+.maze-row:first-child {
+    margin-top: 0;
+}
+.maze-row:nth-child(even) .circle:first-child {
+    margin-left: 27px;
+}
+.maze-row:nth-child(odd) .circle:first-child {
+    margin-left: 0px;
+}
+.circle:last-child {
+    margin-right: 0px;
+}
+.mazeFlip{
+    -webkit-transform: rotate3d(0,1,0, 180deg);
+    -moz-transform: rotate3d(0,1,0, 180deg);
+    -ms-transform: rotate3d(0,1,0, 180deg);
+    -o-transform: rotate3d(0,1,0, 180deg);
+    transform: rotate3d(0,1,0, 180deg);
+
+}
+
+
+
+
+
+/**/

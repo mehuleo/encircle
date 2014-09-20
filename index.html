@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+    .splash-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 210px;
+        width: 200px;
+        height: 300px;
+        margin: auto;
+        background-image: url('img/splash.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .play-btn{
+        position: absolute;
+        display: block;
+        bottom: 150px;
+        left: 0;
+        right: 0;
+        width: 210px;
+        height: 40px;
+        line-height: 40px;
+        margin: auto;
+        border-radius: 50px;
+        font-family: "Open Sans";
+        text-align: center;
+        color: #fff;
+        background: #248F8D;
+        cursor: pointer;
+    }
+    .volume-btn{
+        position: absolute;
+        display: block;
+        /* btn's only for App*/
+        /*display: none;*/
+        bottom: 250px;
+        left: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+        text-align: center;
+        color: #333;
+        cursor: pointer;
+        font-size: 36px;
+    }
+    .creadits-btn{
+        position: absolute;
+        display: block;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        width: 210px;
+        height: 40px;
+        line-height: 40px;
+        margin: auto;
+        border-radius: 50px;
+        font-family: "Open Sans";
+        text-align: center;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="splash-img"></div>
+    <span class="play-btn" onClick="location.href='stage.html'">Play</span>
+    <div id="volume-btn" class="volume-btn" onClick="handleVolume()"></div>
+    <span class="creadits-btn" onClick="location.href='creadits.html'">Creadits</span>
+
+</body>
+
+</html>
+<script type="text/javascript">
+function onDeviceReady() {
+
+    var uID = localStorage.getItem("uid");
+    if (!uID) {
+        var uid = new Date().getTime();
+        uid += "-" + Math.random();
+        localStorage.setItem("uid", uid);
+    }
+    localStorage.setItem("firstRun", 1);
+    try {
+        if (StatusBar && StatusBar.hide)
+            StatusBar.hide();
+    } catch (e) {}
+
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+setTimeout(function() {
+    // location.href = "stage.html";
+}, 5000);
+
+
+function setVolume(){
+    var e = document.getElementById('volume-btn');
+    var on = "<i class='fa fa-volume-up'></i>",
+        off = "<i class='fa fa-volume-off'></i>";
+    if(localStorage.getItem('volume') == '1'){
+        e.innerHTML = on;
+    } else{
+        e.innerHTML = off;
+    }
+}
+
+function handleVolume(){
+    var e = document.getElementById('volume-btn');
+    var on = "<i class='fa fa-volume-up'></i>",
+        off = "<i class='fa fa-volume-off'></i>";
+    if(localStorage.getItem('volume') == '1'){
+        e.innerHTML = off;
+        localStorage.setItem('volume', 0);
+    } else{
+        e.innerHTML = on;
+        localStorage.setItem('volume', 1);
+    }
+}
+setVolume();
+</script>
+
+
+
+
+<!--  -->

@@ -1,0 +1,66 @@
+/*@import url(http://fonts.googleapis.com/css?family=Bangers);*/
+/*@import url(http://fonts.googleapis.com/css?family=Playball);
+@import url(http://fonts.googleapis.com/css?family=Chewy);
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script:400,700);*/
+/*@import url(http://fonts.googleapis.com/css?family=Nunito:400,700);*/
+
+@font-face {
+	font-family: 'Bangers';
+	src: url('../fonts/Bangers.eot');
+	src: local('☺'), url('../fonts/Bangers.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Nunito';
+	src: url('../fonts/Nunito-Regular.eot');
+	src: local('☺'), url('../fonts/Nunito-Regular.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Julius Sans One';
+	src: url('../fonts/JuliusSansOne-Regular.eot');
+	src: local('☺'), url('../fonts/JuliusSansOne-Regular.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans Condensed';
+	src: url('../fonts/OpenSans-CondLight.eot');
+	src: local('☺'), url('../fonts/OpenSans-CondLight.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Light.eot');
+	src: local('☺'), url('../fonts/OpenSans-Light.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Regular.eot');
+	src: local('☺'), url('../fonts/OpenSans-Regular.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-ExtraBold.eot');
+	src: local('☺'), url('../fonts/OpenSans-ExtraBold.ttf') format('truetype');
+	unicode-range: U+0-A0;
+	font-weight: 900;
+	font-style: normal;
+}

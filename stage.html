@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/stage.css">
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="vendor/jqMobi/appframework.min.js"></script>
+    <script type="text/javascript" src="js/adMob.js"></script>
+    <script type="text/javascript" src="js/mini.js"></script>
+</head>
+
+<body>
+    <div id="bodyImitation" class="stage">
+
+        <div class="container">
+            <div id="overAll" class="row-box centered animated d0">
+                <a onclick="removeUI('index.html')" class="column-box backbutton">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl">High Score</div>
+                        <div class="digit highScore"></div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                </span>
+                <span class="column-box">
+                    <span class="cell level-data stars stars-0"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+        <div class="container">
+            <div id="s1" class="row-box bordered shadow centered animated d1 stageContainer">
+                <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl">Score</div>
+                        <div class="digit highScore">0</div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                    <span class="cell small">for </span>
+                    <span class="cell big-txt big-box">beginners</span>
+                </span>
+                <span class="column-box">
+                    <span class="cell level-data stars stars-0">
+                        <span class="levelCompleted">0</span>/9
+                    </span>
+                </span>
+            </div>
+
+            <div class="spacer"></div>
+            <div class="spacer thin"></div>
+            <div id="s2" class="row-box bordered shadow centered animated d2 stageContainer">
+               <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl">Score</div>
+                        <div class="digit highScore">0</div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                    <span class="cell small">if you are</span>
+                    <span class="cell big-txt big-box">Smart</span>
+                </span>
+                <span class="column-box">
+                    <span class="cell level-data stars stars-0">
+                        <span class="levelCompleted">0</span>/9
+                    </span>
+                </span>
+            </div>
+
+            <div class="spacer"></div>
+            <div class="spacer thin"></div>
+            <div id="s3" class="row-box bordered shadow centered animated d3 stageContainer">
+               <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl">Score</div>
+                        <div class="digit highScore">0</div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                    <span class="cell small">its all about</span>
+                    <span class="cell big-txt big-box">scoring</span>
+                </span>
+                <span class="column-box">
+                    <span class="cell level-data stars stars-0">
+                        <span class="levelCompleted">0</span>/9
+                    </span>
+                </span>
+            </div>
+
+            <div class="spacer"></div>
+            <div class="spacer thin"></div>
+            <div id="s4" class="row-box bordered shadow centered animated d4 stageContainer">
+               <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl">Score</div>
+                        <div class="digit highScore">0</div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                    <span class="cell small">face the</span>
+                    <span class="cell big-txt big-box">Randomness</span>
+                </span>
+                <span class="column-box">
+                    <span class="cell level-data stars stars-0">
+                        <span class="levelCompleted">0</span>/9
+                    </span>
+                </span>
+            </div>
+
+            <div class="spacer"></div>
+            <div class="spacer thin"></div>
+            <div id="s0" class="row-box bordered shadow centered animated d4">
+               <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl"></div>
+                        <div class="digit"></div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                    <span class="cell small">more stages comming</span>
+                    <span class="cell big-txt big-box">shortly</span>
+                </span>
+                <span class="column-box">
+                    <span class="cell level-data stars"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+    initUI();
+    setStageScore();
+
+    $('#bodyImitation').addClass('visible');
+    $('.animated').addClass(uiAnim[0] + ' animated')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass(uiAnim.join(' '));
+            setTimeout(function() {
+                // UIReady();
+                // showHideCir();
+            }, 1300);
+        });
+    $('.stageContainer').on('click', function(){
+        var stage = this.id.substr(1);
+        if(!stage) return;
+        localStorage.setItem("stage", stage);
+        removeUI('level'+stage+'.html');
+    });
+    setHeight();
+    setTimeout(function(){
+        sendStats("In Stage");
+    },1300);
+});
+
+</script>
+
+
+
+
+<!--  -->

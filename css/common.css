@@ -1,0 +1,193 @@
+@import url('fonts.css');
+
+html, body {
+    display: block;
+    height: 100%;
+    min-width: 100%;
+    padding: 0;
+    margin: 0 0 0px 0;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #eae8dd;
+    background-color: #DFDFDF;
+    background-color: #fff;
+    overflow: auto;
+}
+@media (min-width: 600px) {
+  body {
+    /*-webkit-transform: scale(1.2) center top;*/
+	/*-webkit-transform-origin: ;*/
+  }
+}
+#theCircle {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.header{
+	height: 60px;
+}
+#bodyImitation{
+    position: relative;
+    visibility: visible;
+    height: 100%;
+    /*min-height: 510px;*/
+    background-color: none;
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.column-box.backbutton {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/*	Shorthand css	*/
+.spacer{ display: block; height: 13px; }
+    .spacer.thin{ display: block; height: 5px; }
+.spacerP{ display: block; height: 10%; }
+    .spacerP.thin{ display: block; height: 3%; }
+
+.visible{ visibility: visible; }
+.hidden{ visibility: hidden; }
+
+.float-r{ float: right; }
+.float-n{ float: none; }
+.float-l{ float: left; }
+
+
+/* Animation Delay */
+	.d0{ -webkit-animation-delay: .09s; }
+	.d1{ -webkit-animation-delay: .18s; }
+	.d2{ -webkit-animation-delay: .27s; }
+	.d3{ -webkit-animation-delay: .36s; }
+	.d4{ -webkit-animation-delay: .45s; }
+	.d5{ -webkit-animation-delay: .54s; }
+	.d6{ -webkit-animation-delay: .63s; }
+	.d7{ -webkit-animation-delay: .72s; }
+	.d8{ -webkit-animation-delay: .81s; }
+	.d9{ -webkit-animation-delay: .90s; }
+	.d10{ -webkit-animation-delay: .101s; }
+
+/*	Stars for game score */
+	.star{
+	    background-size: contain;
+	    background-position: center top;
+	    background-repeat: no-repeat;
+	}
+	.stars{
+		display: inline-block;
+		min-width: 56px;
+		min-height: 30px;
+	    background-size: contain;
+	    background-position: center top;
+	    background-repeat: no-repeat;
+	}
+	.stars-0{
+	    background-image: url('../img/star-o-w.png');
+	}
+	.stars-1{
+	    background-image: url('../img/star-1-y.png');
+	}
+	.stars-2{
+	    background-image: url('../img/star-2-y.png');
+	}
+	.stars-3{
+	    background-image: url('../img/star-3-y.png');
+	}
+
+
+/*	Stage & Levels	*/
+	/*	Score data	*/
+	.score-data > .lbl{
+		line-height: 16px;
+		font-size: 16px;
+	}
+	.score-data > .digit{
+		line-height: 24px;
+		font-size: 24px;
+	}
+	.level-data{
+		min-width: 56px;
+		padding-top: 20px;
+		font-size: 26px;
+		box-sizing: border-box;
+	}
+
+.cssEaseInCubic{
+	-webkit-transition: all 300ms; 
+	-moz-transition: all 300ms; 
+	-o-transition: all 300ms; 
+	transition: all 300ms;
+}
+
+@-webkit-keyframes circleMove {
+    0%{
+    	width: 30px;
+    	height: 30px;
+    	margin: 0;
+    }
+    50% {
+    	width: 50px;
+    	height: 50px;
+    	margin: -10px 0 0 -10px;
+    }
+    100% {
+    	width: 30px;
+    	height: 30px;
+    	margin: 0;
+    }
+}
+.circleMove {
+    -webkit-animation-name: circleMove;
+    -webkit-transform-origin:center middle;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
+
+@-webkit-keyframes circleBlock {
+    0%{
+    	width: 30px;
+    	height: 30px;
+    	margin: 0px;
+    	opacity: 1;
+    }
+    90% {
+    	width: 50px;
+    	height: 50px;
+    	margin: -11px;
+    	opacity: 0;
+    }
+    100% {
+    	width: 30px;
+    	height: 30px;
+    	margin: 0px;
+    	opacity: 0;
+    }
+}
+.circleBlock {
+    -webkit-animation-name: circleBlock;
+    -webkit-transform-origin:center middle;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+}
+
+
+/**/

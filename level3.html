@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/stage.css">
+    <link rel="stylesheet" type="text/css" href="css/levels.css">
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="vendor/jqMobi/appframework.min.js"></script>
+    <script type="text/javascript" src="js/mini.js"></script>
+    <script type="text/javascript" src="js/adMob.js"></script>
+</head>
+
+<body class="stage3">
+    <div id="bodyImitation">
+        <div class="spacer"></div>
+        
+        <!-- Score details -->
+        <div class="container">
+            <div class="row-box centered animated d1">
+                <a onclick="removeUI('stage.html')" class="column-box backbutton">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                <span class="column-box">
+                    <span class="cell score-data">
+                        <div class="lbl">Score</div>
+                        <div id="score" class="digit">0</div>
+                    </span>
+                </span>
+                <span class="column-box stage-name">
+                    <span class="cell small">its all about </span>
+                    <span class="cell big-txt big-box">scoring</span>
+                </span>
+                <span class="column-box">
+                    <span id="star" class="cell level-data stars"><span id="played"></span>/9</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- <div class="spacer thin"></div> -->
+
+        <div class="level-parent">
+            <div class="spacer thin"></div>
+            <div class="level-box animated d1">1</div>
+            <div class="level-box animated d2">2</div>
+            <div class="level-box animated d3">3</div>
+
+            <div class="spacer thin"></div>
+            <div class="level-box animated d4">4</div>
+            <div class="level-box animated d5 ">5</div>
+            <div class="level-box animated d6 ">6</div>
+            
+            <div class="spacer thin"></div>
+            <div class="level-box animated d7 ">7</div>
+            <div class="level-box animated d8 ">8</div>
+            <div class="level-box animated d9 ">9</div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+    initUI();
+    $('#bodyImitation').addClass('visible');
+
+    // var starsData = [3,3,3,3,0,0,0,0,0];
+    // $(".level-box").each(function(i,v){
+    //     $(this).addClass("stars stars-"+starsData[i]);
+    // });
+    setLevelScore(3);
+
+    var mazeAnim = 
+    $('.animated').addClass(uiAnim[0] + ' animated')
+    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $(this).removeClass(uiAnim.join(' ' ));
+        setTimeout(function(){
+            // UIReady();
+            // showHideCir();
+        },1300);
+    });
+
+    $('.level-box').on('click', function(){
+        var level = $(this).text();
+        localStorage.setItem("level", level);
+        removeUI('game1.html');
+    });
+    setHeight();
+});
+</script>
+
+
+
+
+<!--  -->

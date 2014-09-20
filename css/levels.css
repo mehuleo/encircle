@@ -1,0 +1,83 @@
+body{ background-color: #eee; }
+.container{
+    position: relative;
+    font-family: "Bangers";
+    font-size: 18px;
+    color: #72d0d4;
+    color: #33bccc;
+    text-shadow: 3px 4px 1px rgba(0,0,0, .18);
+}
+
+/*      LEVEL BOX       */
+
+.level-parent{
+    position: relative;
+    display: block;
+    height: 300px;
+    margin: 21px auto;
+    overflow: hidden;
+    text-align: center;
+}
+.level-row {
+    padding: 8px 21px;
+}
+.level-box {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 0px 18px 18px 0px;
+    padding-top: 30px;
+    /* border: 1px solid #ccc; */
+    box-sizing: border-box;
+    border-radius: 5px;
+    line-height: 40px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Nunito";
+    color: #fff;
+    text-shadow: 5px 5px 1px rgba(0,0,0, .18);
+    text-align: center;
+    background-color: #32bfc6;
+    box-shadow: 5px 5px 1px rgba(0,0,0, .12);
+    overflow: hidden;
+}
+.level-box:nth-child(4n){ margin-right: 0px; }
+.disabled{ opacity: .3; }
+
+.level-box { cursor: pointer; }
+.level-box:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform-origin: center top;
+    -webkit-transition: all 500ms cubic-bezier(0.550, 0.055, 0.675, 0.190); 
+    -moz-transition: all 500ms cubic-bezier(0.550, 0.055, 0.675, 0.190); 
+    -o-transition: all 500ms cubic-bezier(0.550, 0.055, 0.675, 0.190); 
+    transition: all 500ms cubic-bezier(0.550, 0.055, 0.675, 0.190);
+}
+
+/*      Stage theme     */
+.stage1{ background: #F0DDAA; }
+.stage2{ background: #F0ECC9; }
+.stage3{ background: #F8B195; }
+.stage4{ background: #8EB2C5; }
+
+.stage1 .container{ color: #22836C; }
+.stage2 .container{ color: #058789; }
+.stage3 .container{ color: #355C7D; }
+.stage4 .container{ color: #615375; }
+
+.stage1 .level-box{ background-color: #59B390; }
+.stage2 .level-box{ background-color: #058789; }
+.stage3 .level-box{ background-color: #F67280; }
+.stage4 .level-box{ background-color: #E5625C; }
+
+.stage1 .level-box{ color: #eee; }
+.stage2 .level-box{ color: #fff; }
+.stage3 .level-box{ color: #6C5B7B; }
+.stage4 .level-box{ color: #ccc; }
+
+
+
+
+
+/**/

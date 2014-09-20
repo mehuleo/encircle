@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/maze.css">
+    <link rel="stylesheet" type="text/css" href="css/stage.css">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <!-- minified libs -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="vendor/jqMobi/appframework.min.js"></script>
+    <script type="text/javascript" src="js/utill.js"></script>
+    <script type="text/javascript" src="js/adMob.js"></script>
+    <script type="text/javascript" src="js/mini.js"></script>
+    <!-- TODO: refactor this -->
+
+    <!-- Data -->
+    <script type="text/javascript" src="data/stage1.js"></script>
+    <script type="text/javascript" src="data/stage2.js"></script>
+    <script type="text/javascript" src="data/stage3.js"></script>
+    <script type="text/javascript" src="data/stage4.js"></script>
+    <script type="text/javascript" src="data/Colorsets.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="js/Queue.js"></script>
+    <script type="text/javascript" src="js/HaxNeighbour.js"></script>
+    <script type="text/javascript" src="js/Graph.js"></script>
+    <script type="text/javascript" src="js/Theme.js"></script>
+    <script type="text/javascript" src="js/Maze.js"></script>
+    <script type="text/javascript" src="js/GameControll.js"></script>
+</head>
+
+<body>
+    <div id="bodyImitation" class="">
+        <div class="header container">
+            <a onclick="goBack()" class="column-box backbutton"><i class="fa fa-chevron-left"></i></a>
+            <span class="column-box">
+                <span class="cell score-data">
+                    <div class="lbl">Moves</div>
+                    <div id="moves" class="digit">0</div>
+                </span>
+            </span>
+            <span class="column-box stage-name">
+                <span class="cell small">for</span>
+                <span class="cell big-txt big-box">beginners</span>
+            </span>
+            <span class="column-box">
+                <span class="cell score-data">
+                    <div class="lbl">Score</div>
+                    <div class="digit">34523</div>
+                </span>
+            </span>
+        </div>
+        <div id="mazeParent" class="parent"></div>
+        <div id="theCircle" class=" cssEaseInCubic"></div>
+    </div>
+
+    <div class="popup-wrapper"></div>
+    <div class="popup">
+        <div class="popup-header"></div>
+        <div class="popup-msg"></div>
+        <div class="popup-button"></div>
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+    var info = {
+        type: 'circle',
+        width: 11,
+        height: 11,
+        invisible: [],
+        dead: [],
+        border: [],
+        randomKill: 0
+    };
+    info.width = 11;
+    info.height = 11;
+    Game.init(info, true);
+
+    $('#bodyImitation').addClass('visible');
+    $('#bodyImitation').addClass(uiAnim[0] + ' animated')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass(uiAnim.join(' ' ));
+        });
+    $('.circle').on('click', function() {
+        console.debug("clicked , ", this.id);
+        var d = this.id.split('-');
+        $(this).toggleClass('dead');
+        Maze.repaintTheme();
+    });
+    $('body').on('click', showData);
+    return;
+});
+function goBack(){
+    var stage = localStorage.getItem("stage");
+    removeUI("level"+stage+".html");
+}
+
+function showData() {
+    var arr = [];
+    $('.dead').each(function() {
+        var d = this.id.split('-');
+        arr.push(d[1] + ',' + d[2]);
+    });
+    console.debug("-->", arr.join("', '"));
+}
+</script>
+
+
+//

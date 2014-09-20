@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/maze.css">
+    <link rel="stylesheet" type="text/css" href="css/stage.css">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <!-- minified libs -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="vendor/jqMobi/appframework.min.js"></script>
+    <script type="text/javascript" src="js/utill.js"></script>
+    <script type="text/javascript" src="js/adMob.js"></script>
+    <script type="text/javascript" src="js/mini.js"></script>
+    <!-- TODO: refactor this -->
+
+    <!-- Data -->
+    <script type="text/javascript" src="data/stage1.js"></script>
+    <script type="text/javascript" src="data/stage2.js"></script>
+    <script type="text/javascript" src="data/stage3.js"></script>
+    <script type="text/javascript" src="data/stage4.js"></script>
+    <script type="text/javascript" src="data/Colorsets.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="js/Queue.js"></script>
+    <script type="text/javascript" src="js/HaxNeighbour.js"></script>
+    <script type="text/javascript" src="js/Graph.js"></script>
+    <script type="text/javascript" src="js/Theme.js"></script>
+    <script type="text/javascript" src="js/Maze.js"></script>
+    <script type="text/javascript" src="js/GameControll.js"></script>
+</head>
+
+<body>
+    <div id="bodyImitation" class="">
+        <div class="header container">
+            <a onclick="goBack()" class="column-box backbutton"><i class="fa fa-chevron-left"></i></a>
+            <span class="column-box">
+                <span class="cell score-data">
+                    <div class="lbl">Time</div>
+                    <div id="time" class="digit">00</div>
+                </span>
+            </span>
+            <span class="column-box">
+                <span class="cell score-data">
+                    <div class="lbl">Moves</div>
+                    <div id="moves" class="digit">0</div>
+                </span>
+            </span>
+            <span class="column-box">
+                <span class="cell score-data">
+                    <div class="lbl">Score</div>
+                    <div id="score" class="digit">34523</div>
+                </span>
+            </span>
+            <span class="column-box star-parent">
+                <span id="star1" class="star star-empty"></span>
+                <span id="star2" class="star star-empty"></span>
+                <span id="star3" class="star star-empty"></span>
+            </span>
+        </div>
+        <div id="mazeParent" class="parent"></div>
+        <div id="theCircle" class=" cssEaseInCubic"></div>
+    </div>
+
+    <div class="popup-wrapper"></div>
+    <div class="popup popup-win">
+        <!-- <div class="title">Ha!</div> -->
+        <div class="stars"></div>
+        <div class="score">87399</div>
+        <div class="msg">You are awesome!</div>
+        <span class="screenshot">Let me take a screenshot</span>
+        <span class="back"><i class="fa fa-arrow-left"></i></span>
+        <span class="replay"><i class="fa fa-repeat"></i></span>
+        <span class="next"><i class="fa fa-arrow-right"></i></span>
+    </div>
+ <!--    <div class="popup popup-lost">
+        <div class="msg">You are awesome!</div>
+        <span class="back"><i class="fa fa-arrow-left"></i></span>
+        <span class="replay"><i class="fa fa-repeat"></i></span>
+        <span class="next-disabled"><i class="fa fa-arrow-right"></i></span>
+    </div> -->
+
+    <audio id="kill" preload="auto" src="sound/water-drop-1-1.ogg"></audio>
+    <audio id="move" preload="auto" src="sound/Swoosh-1.m4a"></audio>
+    <audio id="gameOver" preload="auto" src="sound/game-over-1.ogg"></audio>
+</body>
+
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+    initUI();
+    Game.init();
+
+    $('#bodyImitation').addClass('visible');
+    $('#bodyImitation').addClass(uiAnim[0] + ' animated')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            setTimeout(function(){
+                $('#bodyImitation').removeClass(uiAnim.join(' ' ));
+            },500);
+        });
+
+    setHeight();
+    $('.back').on('click', Game.handleBack);
+    $('.replay').on('click', Game.handleReplay);
+    $('.next').on('click', Game.handleNext);
+    $('.screenshot').on('click', Game.handleTakeScreenshot);
+});
+function goBack(){
+    setTimeout(function(){
+        try{
+            initAd();
+            createInterstitialAd();
+        } catch(e){ }
+    },500);
+    var stage = localStorage.getItem("stage");
+    if(stage > 0 && stage <= totStage)
+        removeUI("level"+stage+".html");
+    else
+        removeUI("stage.html");
+}
+
+function showData() {
+    var arr = [];
+    $('.dead').each(function() {
+        var d = this.id.split('-');
+        arr.push(d[1] + ',' + d[2]);
+    });
+    // console.debug("-->", arr.join("', '"));
+}
+</script>
+
+
