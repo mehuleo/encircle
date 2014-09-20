@@ -51,7 +51,7 @@
 	bottom: 0;
 	margin: auto;
 	width: 300px;
-	height: 300px;
+	height: 350px;
 	background: #fff;
 	border-radius: 8px;
 	text-align: center;
@@ -61,7 +61,7 @@
 .popup.popup-win{ display: none; }
 .popup.popup-lost{
 	display: none;
-	height: 180px;
+	height: 210px;
 	padding-top: 30px;
 	box-sizing: border-box;
 }
@@ -137,6 +137,29 @@
 	margin-top: 13px;
 	color: #999;
 	cursor: pointer;
+}
+
+.store-icons{
+    display: block;
+    margin: 21px auto;
+    text-align: center;
+}
+.store-icons a{
+    display: inline-block;
+    width: 140px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    vertical-align: top;
+    cursor: pointer;
+}
+.play-store-img{
+    background-image: url('../img/play-store-img.png');
+    margin-right: 13px;
+}
+.itunes-store-img{
+    background-image: url('../img/itunes-store-img.png');
 }
 
 /*#star1{

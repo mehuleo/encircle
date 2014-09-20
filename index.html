@@ -43,21 +43,31 @@
         background: #248F8D;
         cursor: pointer;
     }
-    .volume-btn{
+    .store-icons{
         position: absolute;
-        /*display: block;*/
-        /* btn's only for App*/
-        display: none;
-        bottom: 250px;
+        display: block;
         left: 0;
         right: 0;
-        width: 30px;
-        height: 30px;
-        margin: auto;
+        bottom: 250px;
+        margin: 0 auto;
         text-align: center;
-        color: #333;
+    }
+    .store-icons a{
+        display: inline-block;
+        width: 140px;
+        height: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        vertical-align: top;
         cursor: pointer;
-        font-size: 36px;
+    }
+    .play-store-img{
+        background-image: url('img/play-store-img.png');
+        margin-right: 13px;
+    }
+    .itunes-store-img{
+        background-image: url('img/itunes-store-img.png');
     }
     .creadits-btn{
         position: absolute;
@@ -80,71 +90,28 @@
 <body>
     <div class="splash-img"></div>
     <span id="play-btn" class="play-btn" onClick="location.href='stage.html'">Play</span>
-    <div id="volume-btn" class="volume-btn" onClick="handleVolume()"></div>
     <span class="creadits-btn" onClick="location.href='creadits.html'">Creadits</span>
 
+    <div class="store-icons">
+        <a href="//play.google.com/store/apps/details?id=com.mehuleo.encircle" class="play-store-img" target="_blank"></a>
+        <a href="//itunes.apple.com/us/app/encircle-the-circle/id915182741" class="itunes-store-img" target="_blank"></a>
+    </div>
 </body>
 
 </html>
-<script type="text/javascript">
-function onDeviceReady() {
-
-    var uID = localStorage.getItem("uid");
-    if (!uID) {
-        var uid = new Date().getTime();
-        uid += "-" + Math.random();
-        localStorage.setItem("uid", uid);
-    }
-    localStorage.setItem("firstRun", 1);
-    try {
-        if (StatusBar && StatusBar.hide)
-            StatusBar.hide();
-    } catch (e) {}
-
-}
-
-document.addEventListener("deviceready", onDeviceReady, false);
-setTimeout(function() {
-    // location.href = "stage.html";
-}, 5000);
-
-
-function setVolume(){
-    var e = document.getElementById('volume-btn');
-    var on = "<i class='fa fa-volume-up'></i>",
-        off = "<i class='fa fa-volume-off'></i>";
-    if(localStorage.getItem('volume') == '1'){
-        e.innerHTML = on;
-    } else{
-        e.innerHTML = off;
-    }
-}
-
-function handleVolume(){
-    var e = document.getElementById('volume-btn');
-    var on = "<i class='fa fa-volume-up'></i>",
-        off = "<i class='fa fa-volume-off'></i>";
-    if(localStorage.getItem('volume') == '1'){
-        e.innerHTML = off;
-        localStorage.setItem('volume', 0);
-    } else{
-        e.innerHTML = on;
-        localStorage.setItem('volume', 1);
-    }
-}
-setVolume();
-</script>
 
 <script type="text/javascript">
-    function checkBrowser(){
-        if(/(chrome)|(safari)/.test(navigator.userAgent.toLowerCase()))
+    function checkBrowser() {
+        if (/(chrome)|(safari)/.test(navigator.userAgent.toLowerCase()))
             document.getElementById("play-btn").style.display = "block";
-        else{
+        else {
             alert("Sorry, for now only Chrome and Safari browsers are supported.");
         }
     }
     setTimeout(checkBrowser, 800);
 </script>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
