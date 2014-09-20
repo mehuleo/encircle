@@ -28,7 +28,7 @@
     }
     .play-btn{
         position: absolute;
-        display: block;
+        display: none;
         bottom: 150px;
         left: 0;
         right: 0;
@@ -45,9 +45,9 @@
     }
     .volume-btn{
         position: absolute;
-        display: block;
+        /*display: block;*/
         /* btn's only for App*/
-        /*display: none;*/
+        display: none;
         bottom: 250px;
         left: 0;
         right: 0;
@@ -79,7 +79,7 @@
 
 <body>
     <div class="splash-img"></div>
-    <span class="play-btn" onClick="location.href='stage.html'">Play</span>
+    <span id="play-btn" class="play-btn" onClick="location.href='stage.html'">Play</span>
     <div id="volume-btn" class="volume-btn" onClick="handleVolume()"></div>
     <span class="creadits-btn" onClick="location.href='creadits.html'">Creadits</span>
 
@@ -135,6 +135,16 @@ function handleVolume(){
 setVolume();
 </script>
 
+<script type="text/javascript">
+    function checkBrowser(){
+        if(/(chrome)|(safari)/.test(navigator.userAgent.toLowerCase()))
+            document.getElementById("play-btn").style.display = "block";
+        else{
+            alert("Sorry, for now only Chrome and Safari browsers are supported.");
+        }
+    }
+    setTimeout(checkBrowser, 800);
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
