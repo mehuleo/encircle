@@ -10,7 +10,7 @@ Though it won't affect any execution, need to remove that code from here.
 
 Also browsers other than Chrome and Safari are not supported yet, need to fix CSS for that.
 
-####Creadits
+####Credits
 Sahdev, Darshan, Jessy, Kartikeya thanks a lot for providing awesome suggestions.
 
 Thanks Daniel Eden (github.com/daneden) for your fantastic library.
