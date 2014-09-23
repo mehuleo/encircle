@@ -142,15 +142,15 @@ $(document).ready(function() {
     initUI();
     setStageScore();
 
-    $('#bodyImitation').addClass('visible');
-    $('.animated').addClass(uiAnim[0] + ' animated')
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            $(this).removeClass(uiAnim.join(' '));
-            setTimeout(function() {
-                // UIReady();
-                // showHideCir();
-            }, 1300);
-        });
+    // $('#bodyImitation').addClass('visible');
+    // $('.animated').addClass(uiAnim[0] + ' animated')
+    //     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //         $(this).removeClass(uiAnim.join(' '));
+    //         // setTimeout(function() {
+    //         //     // UIReady();
+    //         //     // showHideCir();
+    //         // }, 1300);
+    //     });
     $('.stageContainer').on('click', function(){
         var stage = this.id.substr(1);
         if(!stage) return;

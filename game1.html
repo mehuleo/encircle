@@ -95,13 +95,13 @@ $(document).ready(function() {
     initUI();
     Game.init();
 
-    $('#bodyImitation').addClass('visible');
-    $('#bodyImitation').addClass(uiAnim[0] + ' animated')
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-            setTimeout(function(){
-                $('#bodyImitation').removeClass(uiAnim.join(' ' ));
-            },500);
-        });
+    // $('#bodyImitation').addClass('visible');
+    // $('#bodyImitation').addClass(uiAnim[0] + ' animated')
+    //     .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //         setTimeout(function(){
+    //             $('#bodyImitation').removeClass(uiAnim.join(' ' ));
+    //         },500);
+    //     });
 
     setHeight();
     $('.back').on('click', Game.handleBack);

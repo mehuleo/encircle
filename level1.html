@@ -73,15 +73,15 @@ $(document).ready(function() {
     // });
     setLevelScore(1);
 
-    var mazeAnim = 
-    $('.animated').addClass(uiAnim[0] + ' animated')
-    .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        $(this).removeClass(uiAnim.join(' ' ));
-        setTimeout(function(){
-            // UIReady();
-            // showHideCir();
-        },1300);
-    });
+    // var mazeAnim = 
+    // $('.animated').addClass(uiAnim[0] + ' animated')
+    // .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    //     $(this).removeClass(uiAnim.join(' ' ));
+    //     setTimeout(function(){
+    //         // UIReady();
+    //         // showHideCir();
+    //     },1300);
+    // });
 
     $('.level-box').on('click', function(){
         var level = $(this).text();
