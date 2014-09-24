@@ -66,7 +66,8 @@
 	box-sizing: border-box;
 }
 .popup > .msg{
-	font-size: 18px;
+	font-size: 24px;
+	font-weight: 500;
 }
 .popup > .stars{
 	width: 200px;
@@ -136,6 +137,7 @@
 	/*border: 1px solid #ccc;*/
 	margin-top: 13px;
 	color: #999;
+	font-size: 16px;
 	cursor: pointer;
 }
 
@@ -160,6 +162,37 @@
 }
 .itunes-store-img{
     background-image: url('../img/itunes-store-img.png');
+}
+
+.howtoplay{
+	display: block;
+	/*position: relative;*/
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: -13px;
+	line-height: 30px;
+	/*background: rgba(0,0,0, .03);*/
+	text-align: center;
+	text-transform: uppercase;
+	color: #333;
+	font-weight: 400;
+	cursor: pointer;
+}
+#helpImg{
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background-color: rgba(0,0,0, .8);
+	background-image: url(../img/howto.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	z-index: 100;
 }
 
 /*#star1{
