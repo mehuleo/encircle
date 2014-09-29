@@ -1,8 +1,9 @@
-encircle
+Encircle
 ========
 
 Amazing puzzle game based on retro 'Trap The Cat' game.
 
+[Play here](http://mehuleo.github.io/encircle)
 
 #### Note
 I have copied this code from my cordova project, so it contains some files and code related to mobile app
