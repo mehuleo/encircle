@@ -61,12 +61,12 @@
 .popup.popup-win{ display: none; }
 .popup.popup-lost{
 	display: none;
-	height: 210px;
+	height: 230px;
 	padding-top: 30px;
 	box-sizing: border-box;
 }
 .popup > .msg{
-	font-size: 24px;
+	font-size: 21px;
 	font-weight: 500;
 }
 .popup > .stars{
