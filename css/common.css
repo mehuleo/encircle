@@ -190,4 +190,17 @@ a{
 }
 
 
+.fbShare{
+    position: absolute;
+    display: block;
+    top: 50px;
+    right: 0px;
+    width: 100px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    background: #3B5998;
+    cursor: pointer;
+}
 /**/

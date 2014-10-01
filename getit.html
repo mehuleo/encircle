@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Encircle, A Puzzle</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+    .splash-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 210px;
+        width: 200px;
+        height: 300px;
+        margin: auto;
+        background-image: url('img/splash.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .store-icons{
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        bottom: 200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .store-icons a{
+        display: inline-block;
+        width: 140px;
+        height: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        vertical-align: top;
+        cursor: pointer;
+    }
+    .play-store-img{
+        background-image: url('img/play-store-img.png');
+        margin-right: 13px;
+    }
+    .itunes-store-img{
+        background-image: url('img/itunes-store-img.png');
+    }
+    </style>
+</head>
+
+<body>
+    <div class="splash-img"></div>
+    <div class="store-icons">
+        <a href="//play.google.com/store/apps/details?id=com.mehuleo.encircle" class="play-store-img" target="_blank" onClick="trackEvent(this.href)"></a>
+        <a href="//itunes.apple.com/us/app/encircle-the-circle/id915182741" class="itunes-store-img" target="_blank" onClick="trackEvent(this.href)"></a>
+    </div>
+</body>
+</html>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55006814-1', 'auto');
+    ga('send', 'pageview');
+
+    var trackEvent = function(url) {
+        ga('send', 'event', 'getit', 'click', url, {'hitCallback':
+            function (){}
+        });
+    }
+</script>
