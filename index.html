@@ -44,6 +44,22 @@
         background: #248F8D;
         cursor: pointer;
     }
+    .notsupported{
+        position: absolute;
+        display: none;
+        bottom: 350px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        line-height: 30px;
+        margin: auto;
+        border-radius: 50px;
+        font-family: "Open Sans";
+        text-align: center;
+        color: #fff;
+        color: #248F8D;
+        cursor: pointer;
+    }
     .store-icons{
         position: absolute;
         display: block;
@@ -91,6 +107,11 @@
 <body>
     <div class="splash-img"></div>
     <span id="play-btn" class="play-btn" onClick="location.href='stage.html'">Play Now</span>
+    <span id="notsupported" class="notsupported">
+        Sorry, only chrome and sfari are supported for now.
+        <br />But you can play it on your smart phone,
+        <br />Download it from here:
+    </span>
     <span class="credits-btn" onClick="location.href='credits.html'">Credits</span>
 
     <div class="store-icons">
@@ -102,11 +123,15 @@
 </html>
 
 <script type="text/javascript">
+    var gaKey = 'store';
     function checkBrowser() {
-        if (/(chrome)|(safari)/.test(navigator.userAgent.toLowerCase()))
+        if (/(chrome)|(safari)/.test(navigator.userAgent.toLowerCase())){
             document.getElementById("play-btn").style.display = "block";
-        else {
-            alert("Sorry, for now only Chrome and Safari browsers are supported.");
+            document.getElementById("notsupported").style.display = "none";
+        } else {
+            gaKey = 'FFstore'
+            document.getElementById("play-btn").style.display = "none";
+            document.getElementById("notsupported").style.display = "block";
         }
     }
     setTimeout(checkBrowser, 800);
@@ -124,7 +149,7 @@
     ga('send', 'pageview');
 
     var trackEvent = function(url) {
-        ga('send', 'event', 'store', 'click', url, {'hitCallback':
+        ga('send', 'event', gaKey, 'click', url, {'hitCallback':
             function (){}
         });
     }
