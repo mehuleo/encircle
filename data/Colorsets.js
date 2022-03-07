@@ -21,7 +21,7 @@ c[id].circles = {
     borderColor: '666'
 };
 // Color 2
-id='set2';
+id = 'set2';
 c[id] = {
     bg: 'b0d2d3',
     dark: '415f79',
@@ -32,11 +32,11 @@ c[id] = {
 c[id].header = c[id].border;
 c[id].deadNode = {
     color: c[id].dark,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].theCircle = {
     color: c[id].darker,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].circles = {
     borderWidth: c[id].bw,
@@ -66,7 +66,7 @@ c[id].circles = {
 //     borderColor: c[id].border
 // };
 // Color 4 
-id='set4';
+id = 'set4';
 c[id] = {
     bg: 'F9F2E7',
     dark: '8FBE00',
@@ -77,18 +77,18 @@ c[id] = {
 c[id].header = c[id].dark;
 c[id].deadNode = {
     color: c[id].dark,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].theCircle = {
     color: c[id].darker,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].circles = {
     borderWidth: c[id].bw,
     borderColor: c[id].border
 };
 // Color 4 
-id='set4';
+id = 'set4';
 c[id] = {
     bg: 'E4DED0',
     dark: '16a061',
@@ -99,18 +99,18 @@ c[id] = {
 c[id].header = c[id].border;
 c[id].deadNode = {
     color: c[id].dark,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].theCircle = {
     color: c[id].darker,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].circles = {
     borderWidth: c[id].bw,
     borderColor: c[id].border
 };
 // Color 5 
-id='set5';
+id = 'set5';
 c[id] = {
     bg: '73C8A9',
     dark: 'BD5532',
@@ -121,18 +121,41 @@ c[id] = {
 c[id].header = c[id].border;
 c[id].deadNode = {
     color: c[id].dark,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].theCircle = {
     color: c[id].darker,
-    borderWidth:0
+    borderWidth: 0
+};
+c[id].circles = {
+    borderWidth: c[id].bw,
+    borderColor: c[id].border
+};
+
+// Color 6 
+id = 'set6';
+c[id] = {
+    bg: 'EAEDf2',
+    dark: 'CFD8DC', // wall
+    darker: 'E91F63', // thief
+    border: '79919D', // cell
+    bw: 1.5,
+};
+c[id].header = c[id].border;
+c[id].deadNode = {
+    color: c[id].dark,
+    borderWidth: 0
+};
+c[id].theCircle = {
+    color: c[id].darker,
+    borderWidth: 0
 };
 c[id].circles = {
     borderWidth: c[id].bw,
     borderColor: c[id].border
 };
 // Testing 
-id='test';
+id = 'test';
 c[id] = {
     bg: '01a89e',
     dark: 'eee',
@@ -143,11 +166,11 @@ c[id] = {
 c[id].header = c[id].border;
 c[id].deadNode = {
     color: c[id].dark,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].theCircle = {
     color: c[id].darker,
-    borderWidth:0
+    borderWidth: 0
 };
 c[id].circles = {
     borderWidth: c[id].bw,

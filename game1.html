@@ -1,22 +1,22 @@
 <html>
-
-<head>
+  <head>
     <title>Encircle Game</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1" />
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/maze.css">
-    <link rel="stylesheet" type="text/css" href="css/stage.css">
-    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/maze.css" />
+    <link rel="stylesheet" type="text/css" href="css/stage.css" />
+    <link rel="stylesheet" type="text/css" href="css/game.css" />
     <!-- minified libs -->
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="vendor/jqMobi/appframework.min.js"></script>
     <script type="text/javascript" src="js/utill.js"></script>
     <script type="text/javascript" src="js/mini.js"></script>
     <!-- TODO: refactor this -->
 
     <!-- Data -->
+    <script type="text/javascript" src="data/stage0.js"></script>
     <script type="text/javascript" src="data/stage1.js"></script>
     <script type="text/javascript" src="data/stage2.js"></script>
     <script type="text/javascript" src="data/stage3.js"></script>
@@ -29,72 +29,79 @@
     <script type="text/javascript" src="js/Theme.js"></script>
     <script type="text/javascript" src="js/Maze.js"></script>
     <script type="text/javascript" src="js/GameControll.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="bodyImitation" class="">
-        <div class="header container">
-            <a onclick="goBack()" class="column-box backbutton"><i class="fa fa-chevron-left"></i></a>
-            <span class="column-box">
-                <span class="cell score-data">
-                    <div class="lbl">Time</div>
-                    <div id="time" class="digit">00</div>
-                </span>
-            </span>
-            <span class="column-box">
-                <span class="cell score-data">
-                    <div class="lbl">Moves</div>
-                    <div id="moves" class="digit">0</div>
-                </span>
-            </span>
-            <span class="column-box">
-                <span class="cell score-data">
-                    <div class="lbl">Score</div>
-                    <div id="score" class="digit">34523</div>
-                </span>
-            </span>
-            <span class="column-box star-parent">
-                <span id="star1" class="star star-empty"></span>
-                <span id="star2" class="star star-empty"></span>
-                <span id="star3" class="star star-empty"></span>
-            </span>
-        </div>
-        <div class="howtoplay" onclick="$('#helpImg').show()">how to play?</div>
-        <div id="helpImg" onclick="$('#helpImg').hide()"></div>
-        <div id="mazeParent" class="parent"></div>
-        <div id="theCircle" class=" cssEaseInCubic"></div>
+      <!-- <div class="header container">
+        <a onclick="goBack()" class="column-box backbutton"><i class="fa fa-chevron-left"></i></a>
+        <span class="column-box">
+          <span class="cell score-data">
+            <div class="lbl">Time</div>
+            <div id="time" class="digit">00</div>
+          </span>
+        </span>
+        <span class="column-box">
+          <span class="cell score-data">
+            <div class="lbl">Moves</div>
+            <div id="moves" class="digit">0</div>
+          </span>
+        </span>
+        <span class="column-box">
+          <span class="cell score-data">
+            <div class="lbl">Score</div>
+            <div id="score" class="digit">34523</div>
+          </span>
+        </span>
+        <span class="column-box star-parent">
+          <span id="star1" class="star star-empty"></span>
+          <span id="star2" class="star star-empty"></span>
+          <span id="star3" class="star star-empty"></span>
+        </span>
+      </div> -->
+      <!-- <div class="howtoplay" onclick="$('#helpImg').show()">how to play?</div> -->
+      <!-- <div id="helpImg" onclick="$('#helpImg').hide()"></div> -->
+      <div id="mazeParent" class="parent"></div>
+      <div id="theCircle" class="cssEaseInCubic"></div>
     </div>
 
     <div class="popup-wrapper"></div>
     <div class="popup popup-win">
-        <!-- <div class="title">Ha!</div> -->
-        <div class="stars"></div>
-        <div class="score">87399</div>
-        <div class="msg">You are awesome!</div>
-        <span class="screenshot">Let me take a screen-shot to Share this</span>
-        <div class="store-icons">
-            <a href="//play.google.com/store/apps/details?id=com.mehuleo.encircle" class="play-store-img" target="_blank"></a>
-            <a href="//itunes.apple.com/us/app/encircle-the-circle/id915182741" class="itunes-store-img" target="_blank"></a>
-        </div>
-        <span class="back"><i class="fa fa-arrow-left"></i></span>
-        <span class="replay"><i class="fa fa-repeat"></i></span>
-        <span class="next"><i class="fa fa-arrow-right"></i></span>
+      <!-- <div class="title">Ha!</div> -->
+      <!-- <div class="stars"></div> -->
+      <!-- <div class="score">87399</div> -->
+      <!-- <div class="msg">You are awesome!</div> -->
+      <!-- ,<span class="screenshot">Let me take a screen-shot to Share this</span>
+      <div class="store-icons">
+        <a
+          href="//play.google.com/store/apps/details?id=com.mehuleo.encircle"
+          class="play-store-img"
+          target="_blank"
+        ></a>
+        <a
+          href="//itunes.apple.com/us/app/encircle-the-circle/id915182741"
+          class="itunes-store-img"
+          target="_blank"
+        ></a>
+      </div>
+      <span class="back"><i class="fa fa-arrow-left"></i></span>
+      <span class="replay"><i class="fa fa-repeat"></i></span>
+      <span class="next"><i class="fa fa-arrow-right"></i></span> -->
     </div>
- <!--    <div class="popup popup-lost">
+    <!--    <div class="popup popup-lost">
         <div class="msg">You are awesome!</div>
         <span class="back"><i class="fa fa-arrow-left"></i></span>
         <span class="replay"><i class="fa fa-repeat"></i></span>
         <span class="next-disabled"><i class="fa fa-arrow-right"></i></span>
     </div> -->
 
-    <audio id="kill" preload="auto" src="sound/water-drop-1-1.ogg"></audio>
+    <!-- <audio id="kill" preload="auto" src="sound/water-drop-1-1.ogg"></audio>
     <audio id="move" preload="auto" src="sound/Swoosh-1.m4a"></audio>
-    <audio id="gameOver" preload="auto" src="sound/game-over-1.ogg"></audio>
-</body>
-
+    <audio id="gameOver" preload="auto" src="sound/game-over-1.ogg"></audio> -->
+  </body>
 </html>
 <script type="text/javascript">
-$(document).ready(function() {
+  $(document).ready(function () {
     initUI();
     Game.init();
 
@@ -107,44 +114,48 @@ $(document).ready(function() {
     //     });
 
     setHeight();
-    $('.back').on('click', Game.handleBack);
-    $('.replay').on('click', Game.handleReplay);
-    $('.next').on('click', Game.handleNext);
-    $('.screenshot').on('click', Game.handleTakeScreenshot);
-});
-function goBack(){
-    setTimeout(function(){
-        try{
-            initAd();
-            createInterstitialAd();
-        } catch(e){ }
-    },500);
+    $(".back").on("click", Game.handleBack);
+    $(".replay").on("click", Game.handleReplay);
+    $(".next").on("click", Game.handleNext);
+    $(".screenshot").on("click", Game.handleTakeScreenshot);
+  });
+  function goBack() {
+    setTimeout(function () {
+      try {
+        initAd();
+        createInterstitialAd();
+      } catch (e) {}
+    }, 500);
     var stage = localStorage.getItem("stage");
-    if(stage > 0 && stage <= totStage)
-        removeUI("level"+stage+".html");
-    else
-        removeUI("stage.html");
-}
+    if (stage > 0 && stage <= totStage) removeUI("level" + stage + ".html");
+    else removeUI("stage.html");
+  }
 
-function showData() {
+  function showData() {
     var arr = [];
-    $('.dead').each(function() {
-        var d = this.id.split('-');
-        arr.push(d[1] + ',' + d[2]);
+    $(".dead").each(function () {
+      var d = this.id.split("-");
+      arr.push(d[1] + "," + d[2]);
     });
     // console.debug("-->", arr.join("', '"));
-}
+  }
 </script>
 
-
-
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
 
-  ga('create', 'UA-55006814-1', 'auto');
-  ga('send', 'pageview');
-
+  ga("create", "UA-55006814-1", "auto");
+  ga("send", "pageview");
 </script>
